@@ -1,0 +1,670 @@
+/* A Modern CSS Reset */
+*,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],figure,blockquote,dl,dd{margin:0}html{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+
+:root {
+    --main-beige: #F0EFEA;
+    --main-red: #A10115;
+    --main-black: #707070;
+    --main-gray: #C0B2B5;
+  }
+
+html {
+    font-size: 100%;
+    background: var(--main-beige);
+    height: 100%;
+} 
+
+body {
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--main-black);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+p {
+    margin-bottom: 1.15rem;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 2.75rem 0 1.05rem;
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.488em;
+    color: var(--main-red);
+    text-align: center;
+}
+
+h2 {font-size: 2.074em;}
+
+h3 {font-size: 1.728em;}
+
+h4 {font-size: 1.44em;}
+
+h5 {font-size: 1.2em;}
+
+small, .text_small {font-size: 0.833em;}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+section {
+    padding: 90px 30px 0px 30px;
+}
+
+hr {
+    border: dashed 1px var(--main-gray);
+    margin: 0px 0px 60px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-red);
+}
+/*---------------------------------
+
+	Footer
+
+---------------------------------*/
+
+footer {
+    margin-top: 20px;
+    height: 110px;
+    background-color: var(--main-red);
+}
+
+footer ul {
+    margin: 20px 0px 8px 0px;
+}
+
+footer p {
+    margin-bottom:0px;
+    color: var(--main-beige);
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img {
+    margin: 0px 9px;
+}
+
+.social-icon {
+    display: inline-block; 
+}
+
+.social-icon img{
+    width: 36px;
+    height: 36px; 
+}
+/*---------------------------------
+
+	CV - detail
+
+---------------------------------*/
+.cv_list_li + hr {
+    margin: 45px 0px 45px 0px;
+}
+
+.cv_list_li h3, h3, li {
+    text-align: center;
+}
+
+.cv_list_li h2 {
+    margin: 3rem 0 0 0;
+}
+
+.cv_list_li h3 {
+    margin: 4rem 0 0.1rem 0;
+    /* padding: 1.6rem 0 0.6rem 0;
+    margin: 0; */
+}
+
+.cv-title {
+    margin-top: 1.6rem;
+    margin-bottom: 0rem;
+}
+
+.cv_date, .cv_exhibition_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv_exhibition_info > div{
+    margin: 3px
+}
+
+.cv_exhibition_info {
+    margin-bottom: 2rem;
+}
+
+
+
+/*---------------------------------
+
+	Work - detail
+
+---------------------------------*/
+.work-img {
+    width: 100%;
+    display: block;
+}
+
+/* video */
+.iframe-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    margin-bottom: 50px;
+  }
+  
+.iframe-video iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#work_detail > hr {
+    margin: 30px 0px 60px;
+}
+
+#work_detail h3 {
+    margin: 0px;
+}
+
+#work_detail h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#work_detail p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#work_detail img {
+    padding: 30px 0px;
+}
+
+.works_caption p {
+    margin: 0px;
+}
+
+/*---------------------------------
+
+	Contact
+
+---------------------------------*/
+#contact_form input { 
+    border-width: 1px;
+    border-style: solid;
+}
+
+#contact_form textarea, #contact_form input{
+    width: 100%;
+    border-color: var(--main-gray);
+    background-color: var(--main-beige);
+
+}
+.btn-link {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+::placeholder {
+    color: var(--main-gray);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: var(--main-gray);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: var(--main-gray);
+  }
+
+  #contact_result > div {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+  }
+/*---------------------------------
+
+	Information
+
+---------------------------------*/
+.date-and-category {
+    display: flex;
+    font-size: 13.33px;
+}
+
+#information-list ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.info-date {
+    text-align: left;
+    margin-right: 10px;
+}
+
+/* アコーディオン */
+/*ボックス全体*/
+.accbox {
+    margin: 0.4em 0;
+    padding: 0;
+    width: 75%;
+}
+
+/*ラベル*/
+.accbox label {
+    display: block;
+    margin: 1.5px 0;
+    cursor :pointer;
+    transition: all 0.5s;
+    text-align: left;
+    font-size: 19.2px;
+    padding-right: 20px;
+    font-weight: 600;
+}
+
+/*アイコンを表示*/
+.accbox label:after {
+    content: '  \e5cf';
+    font-family: 'Material Icons';
+    position: absolute;
+    right: calc(15% - 30px);
+    font-size: 30px;
+}
+
+/*チェックは隠す*/
+.accbox input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.accbox .accshow {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.cssacc:checked + label + .accshow {
+    height: auto;
+    padding-top: 15px;
+    opacity: 1;
+}
+
+.accbox .accshow p {
+    text-align: left;
+}
+
+/*アイコンを入れ替える*/
+.cssacc:checked + label:after {
+    content: '\e5ce';
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+nav > a {
+    text-decoration: none;
+    color: var(--main-red);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+nav > span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/*---------------------------------
+
+	Index - Top
+
+---------------------------------*/
+#top {
+    padding: 0px;
+    height: 100vh;
+    background: url(../img/top.png) center center / cover no-repeat fixed;
+}
+
+/*---------------------------------
+
+	Index - Profile
+
+---------------------------------*/
+.profile-name > h3{
+    margin-bottom: 0px;
+    display: flex;
+}
+/* Statement, CVボタン */
+.stitch-button {
+    display: flex;
+    text-decoration: none;
+    background: var(--main-red);
+    color: var(--main-beige);
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px;
+  }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.stitch-button:active {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+    border-bottom: none;
+}
+
+.stitch-button  > div {
+    width: 100%;
+    border-bottom: dashed 1.5px #FFF;
+    border-top: dashed 1.5px #FFF;
+    vertical-align: middle;
+    text-align: center;
+    padding: 9px 0px;
+  }
+
+/*---------------------------------
+
+	Index - Information
+
+---------------------------------*/
+/* More...ボタン */
+.more-button {
+    display: flex;
+    text-decoration: none;
+    background: var(--main-red);
+    color: var(--main-beige);
+    width: 90px;
+    height: 36px;
+    justify-content: center;
+    align-items: center; 
+}
+
+.more-button-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Information一覧 */
+.information-list {
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.information-list h5{
+    margin-top: 0px;
+}
+
+.index_information_ul > li {
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+/*---------------------------------
+
+	Index - Works
+
+---------------------------------*/
+/* タイトル */
+.works_caption {
+    display: flex;
+    justify-content: space-around;
+}
+
+.works_caption > div {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.works_caption h5 {
+    margin: 15px 2px 0px 0px;
+}
+
+.works_caption small {
+    margin: 15px 0px 0px 2px;
+}
+
+.works_ul > li {
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+.works_ul a {
+    text-decoration: none;
+    color: var(--main-black);
+}
+
+/*---------------------------------
+
+	Index - Menu
+
+---------------------------------*/
+
+header {
+    opacity: 0.9;
+    background-color: var(--main-gray);
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 10;
+}
+
+header > span {
+    display: flex;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.material-icons.md-55 { 
+    font-size: 55px; 
+    color: var(--main-beige);
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: var(--main-red); /* Black fallback color */
+    opacity: 1; /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 20%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: var(--main-gray);
+    display: block; /* Display block instead of inline */
+    transition: 0.5s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: var(--main-beige);
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+/*---------------------------------
+
+	Index - Contact
+
+---------------------------------*/
+#contact {
+    margin-bottom: 60px;
+}
+#contact > p {
+    text-align: center;
+}
+
+/*---------------------------------
+
+	404
+
+---------------------------------*/
+#not_found_h1 {
+    font-size: 11em;
+    margin-bottom: 0;
+}
+
+#not_found > h4 {
+    margin-bottom: 44px;
+}
+
+/*-------------------------------------
+
+    Tablet
+
+--------------------------------------*/
+ @media screen and (min-width: 768px) {
+
+    /* 全体の画面幅 */
+    
+    section {
+        padding: 90px 60px 0px 60px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .section-container {
+        width: 75%;
+    }
+
+    /* 全体的なボタンサイズ */
+    .stitch-button {
+        max-width: 300px;
+    }
+
+    .work-img {
+        /* height: 600px; */
+        height: 180px;
+    }
+
+    .works_ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between
+      }
+
+    .works_ul > li {
+        width: 45%;
+    }
+
+    .work_detail-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .work_sub_image {
+        width : 48%;
+    }
+    
+    .work_main_image{
+        width: 100%;
+    }
+}
+
+
+/*-------------------------------
+
+    PC
+
+--------------------------------*/
+@media screen and (min-width: 1024px) {
+
+}
+
+
+/*-------------------------------
+
+    For iPhone
+
+--------------------------------*/
+
+/* CSS specific to iOS devices */ 
+@supports (-webkit-touch-callout: none) {
+    #top {
+        background-attachment: scroll;
+    } 
+}

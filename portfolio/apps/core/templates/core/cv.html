@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="cv_list">
+    <div class="section-container">
+    <h1>CV</h1>
+    {% regroup object_list by genre as cv_list %}
+    <ul>
+        {% for genre in cv_list %}
+            <li class="cv_list_li">
+            <div>
+            <h2>{{ genre.grouper }}</h2>
+            {% comment %} <h3>{{ genre.grouper }}</h3> {% endcomment %}
+            </div>
+            {% regroup genre.list by start_at|date:"Y" as objects_by_day %}
+            <div>
+                <ul>
+                    {% for d in objects_by_day %}
+                    <h3>{{ d.grouper }}</h3>
+                    {% comment %} <h5>{{ d.grouper }}</h5> {% endcomment %}
+                        {% for item in d.list %}
+                            {% if genre.grouper == "グループ展" %}
+                                {% if item.link_url %}
+                                    <h5 class="cv-title">{% autoescape off %}<a href="{{ item.link_url }}">{{ item.title }}</a> {% endautoescape %}</h5>
+                                {% else %}
+                                    <h5 class="cv-title">{{ item.title }}</h5>
+                                {% endif %}
+                                <div class="cv_exhibition_info">
+                                    <div> 
+                                        <li><small>{{ item.place }}</small></li>
+                                    </div>
+                                    <div class="cv_date">
+                                        {% if item.end_at %}
+                                            <li><small>({{ item.start_at|date:"n/j" }}</small></li>
+                                            <li><small>-{{ item.end_at|date:"n/j" }})</small></li>
+                                        {% else %}
+                                            <li><small>({{ item.start_at|date:"n/j" }})</small></li>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% elif genre.grouper == "個展"  %}                       
+                                {% if item.link_url %}
+                                    <h5 class="cv-title">{% autoescape off %}<a href="{{ item.link_url }}">{{ item.title }}</a> {% endautoescape %}</h5>
+                                {% else %}
+                                    <h5 class="cv-title">{{ item.title }}</h5>
+                                {% endif %}
+                                <div class="cv_exhibition_info">
+                                    <div> 
+                                        <li><small>{{ item.place }}</small></li>
+                                    </div>
+                                    <div class="cv_date">
+                                        {% if item.end_at %}
+                                            <li><small>({{ item.start_at|date:"n/j" }}</small></li>
+                                            <li><small>-{{ item.end_at|date:"n/j" }})</small></li>
+                                        {% else %}
+                                            <li><small>({{ item.start_at|date:"n/j" }})</small></li>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% elif genre.grouper == "本" %}
+                                <div>
+                                    <h5 class="cv-title">{% autoescape off %}<a href="{{ item.link_url }}">{{ item.title }}</a> {% endautoescape %}</h5>
+                                </div>
+                            {% elif genre.grouper == "アプリ" %}
+        
+                                <h5 class="cv-title"> {% autoescape off %}<a href="{{ item.link_url }}">{{ item.title }}</a> {% endautoescape %}</h5>
+                            {% elif genre.grouper == "受賞歴など" %}
+                                {% if item.link_url %}
+                                    <h5 class="cv-title">{% autoescape off %}<a href="{{ item.link_url }}">{{ item.title }}</a> {% endautoescape %}</h5>
+                                {% else %}
+                                    <h5 class="cv-title">{{ item.title }}</h5>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>  
+            </div>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+    </div>
+</section>
+{% endblock %}

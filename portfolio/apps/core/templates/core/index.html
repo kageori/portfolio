@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <section id="top">
+  </section>
+  <section id="information">
+    <div class="section-container">
+    <h1>NEWS</h1>
+    <ul class="index_information_ul">
+      {% for information in information_list %}
+        <li>
+          <div>{{ information.published_at|date:"Y-m-d" }}</div>
+          <div>{{ information.title }}</div> 
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="more-button-div">
+      <a href="information_list" class="more-button">
+        <div>
+          <span>More...</span>
+        </div>
+      </a>
+    </div>
+    </div>
+  </section>
+  <section id="works">
+    <div class="section-container">
+    <hr>
+    <h1>Works</h1>
+      <ul class="works_ul">
+    {% for work in object_list %}
+        <li>
+          <a href="work/{{ work.slug }}">
+            <img class="work-img" src="media/{{ work.thumbnail_1 }}" width="100%"/>
+            <div class="works_caption">
+              <div>
+                <h5>{{ work.title }}</h5> 
+                <small>({{ work.production_year }})</small> 
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+      <div class="more-button-div">
+      <a href="works_list" class="more-button">
+        <div>
+          <span>More...</span>
+        </div>
+      </a>
+    </div>
+    </div>
+  </section>
+  <section id="profile">
+    <div class="section-container">
+    <hr>
+    <h1>Profile</h1>
+    <div class="profile-name">
+      <h3>清重 影織</h3><div>きよしげ かげおり</div>
+    </div>
+    <br>
+    <p>1992年東京生まれ。<br>東京大学教養学部卒業。</p>
+    <p>切り絵はすべて独学で身に着ける。<br>一枚絵としてのモノクロ／カラー切り絵だけでなく、絵本、動画、詩画や立体作品などの幅広い手法でオリジナルの物語を表現している。<br>さらにスマートフォンをかざすとARが立ち現れる切り絵を制作し、空想世界のリアルへの拡張を試みている。</p>  
+      <p>
+        Twitter : <a href="https://twitter.com/kageori_w">@kageori_w</a><br>
+        Instagram : <a href="https://www.instagram.com/kageori_w/">@kageori_w</a><br>
+        Facebook : <a href="https://www.facebook.com/kageori">清重影織</a><br>
+        Blog : <a href="https://kageori.com">影織文庫</a><br><br></p>
+    <div class="flex-container">
+      <a href="statement" class="stitch-button">
+        <div class="">
+          <span>ステートメント</span>
+        </div>
+      </a>
+    </div>
+    <div class="flex-container">
+      <a href="cv" class="stitch-button">
+        <div class="">
+          経歴・展示
+        </div>
+      </a>
+    </div>
+   </div> 
+  </section>
+  <section id="contact">
+  <div class="section-container">
+    <hr>
+    <h1>Contact</h1>
+    <div class="flex-container">
+    <p>お気軽にお問い合わせください。</p> 
+    </div>
+     <div class="flex-container">
+      <a href="contact" class="stitch-button">
+        <div class="">
+          <span>Contact</span>
+        </div>
+      </a>
+    </div>
+    </div>
+  </section>
+{% endblock %}

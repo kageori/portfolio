@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="contact_form">
+  <div class="section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Contact</h1>
+        <form method="POST">{% csrf_token %}
+          {{ form.as_p }}
+       <div class="flex-container">
+          <button type="submit" class="btn-link  stitch-button">
+            <div>
+              <span>送信</span>
+            </div>
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+{% endblock %}

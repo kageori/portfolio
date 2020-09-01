@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <div class="section-container">
+  <h1>Works</h1>
+   <ul class="works_ul">
+    {% for work in object_list %}
+    <li>
+          <a href="../work/{{ work.slug }}">
+            <img src="/media/{{ work.thumbnail_1 }}"  width="100%"/>
+            <div class="works_caption">
+              <div>
+                <h5>{% autoescape off %}{{ work.title }}{% endautoescape %}</h5> 
+                <small>({{ work.production_year }})</small> 
+              </div>
+            </div>
+          </a>
+        </li>
+    {% empty %}
+    <li>まだ投稿はありません。</li>
+    {% endfor %}
+  </ul>
+
+  {% if is_paginated %}
+  <nav>
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}"><</a>
+    {% endif %}
+
+    {% for num in paginator.page_range %}
+    {% if page_obj.number == num %}
+    <span>{{ num }}</span>
+    {% else %}
+    <a href="?page={{ num }}">{{ num }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  </div>
+</section>  
+{% endblock %}

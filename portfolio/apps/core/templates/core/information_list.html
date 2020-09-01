@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="information-list">
+  <div class="section-container">
+  <h1>NEWS</h1>
+  <ul>
+    {% for information in object_list %}
+    <li class="information-list">
+      <div class="accbox">
+        <div class="date-and-category">
+          <div class="info-date">{{ information.published_at|date:"Y-m-d" }}</div>
+          <div>{{ information.category }}</div>
+        </div>  
+        <input type="checkbox" id="accordion_{{ forloop.counter }}" class="cssacc" />
+        <label for="accordion_{{ forloop.counter }}">{{ information.title }}</label>
+        <div class="accshow">
+        {% autoescape off %}
+          {{ information.content | linebreaks }}
+        {% endautoescape %}
+        </div>
+      </div>
+    </li>
+    {% empty %}
+    <li>まだ投稿はありません。</li>
+    {% endfor %}
+  </ul>
+
+  {% if is_paginated %}
+  <nav>
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}"><</a>
+    {% endif %}
+
+    {% for num in paginator.page_range %}
+    {% if page_obj.number == num %}
+    <span>{{ num }}</span>
+    {% else %}
+    <a href="?page={{ num }}">{{ num }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  </div>
+</section>  
+{% endblock %}

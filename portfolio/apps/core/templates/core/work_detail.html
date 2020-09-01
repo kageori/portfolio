@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <section id="work_detail">
+    <div class="section-container">
+    <h1>Works</h1>
+    {% if work.video_slug %}
+    <div class="iframe-video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ work.video_slug }}?wmode=transparent" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    {% else %}
+     <img class="work_main_image" src="{{ work.thumbnail_1.url }}" />    
+    {% endif %}
+
+    <div class="works_caption">
+        <div>
+          <h3>{% autoescape off %}{{ work.title }}{% endautoescape %}</h3>
+          <p>({{ work.production_year }})</p>
+        </div>
+    </div>
+    <p> {% autoescape off %}
+      {{ work.content | linebreaks }} 
+       {% endautoescape %}</p>
+    <hr>
+    <h4>使用言語・ツール</h4>
+    <p>{{ work.used_tools }}</p>
+
+    <div class="work_detail-container">
+    {% if work.thumbnail_1 and work.video_slug %}
+    <img class="work_sub_image" src="{{ work.thumbnail_1.url }}" />
+    {% endif %}
+    {% if work.thumbnail_2 %}
+    <img class="work_sub_image" src="{{ work.thumbnail_2.url }}"/>
+    {% endif %}
+    {% if work.thumbnail_3 %}
+    <img class="work_sub_image" src="{{ work.thumbnail_3.url }}"  />
+    {% endif %}
+    </div>
+      <div class="flex-container">
+          <a href="/works_list" class="stitch-button">
+          <div class="">
+              <span>一覧に戻る</span>
+          </div>
+          </a>
+      </div>
+    </div> 
+  </section>
+
+{% endblock %}

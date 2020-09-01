@@ -1,0 +1,70 @@
+{% load static %}
+<!doctype html>
+<header>
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="/" onclick="closeNav()">Top</a>
+    <a href="/information_list" onclick="closeNav()">Information</a>
+    <a href="/works_list" onclick="closeNav()">Works</a>
+    <a href="/#profile" onclick="closeNav()">Profile</a>
+    <a href="/contact" onclick="closeNav()">Contact</a>
+  </div>
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<span onclick="openNav()"><i class="material-icons md-55">menu</i></span>
+</header>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Kageori's Portfolio{% endblock %}</title>
+  <link rel="icon" sizes="16x16" type="image/png" href="{% static 'img/favicon.png' %}">
+  <link rel="icon" sizes="32x32" type="image/png" href="{% static 'img/favicon.png' %}">
+  <link rel="icon" sizes="48x48" type="image/png" href="{% static 'img/favicon.png' %}">
+  <link rel="icon" sizes="62x62" type="image/png" href="{% static 'img/favicon.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+  {% load google_analytics_tags %}
+  <div style="display:none">
+    <img src="{% google_analytics %}" width="0" height="0" />
+  </div>
+  <main class="content">
+      {% block content %}
+      {% endblock %}
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+</body>
+<footer>
+  <div>
+    <ul>
+      <li class="social-icon" >
+        <a href="https://twitter.com/kageori_w" ><img src="{% static 'img/twitter.png' %}" alt="Twitter"></a>
+      </li>
+      <li class="social-icon" >
+        <a href="https://www.instagram.com/kageori_w/"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
+      </li>
+      <li class="social-icon" >
+        <a href="https://www.facebook.com/kageori/?modal=admin_todo_tour"><img src="{% static 'img/facebook.png' %}" alt="Facebook"></a>
+      </li class="social-icon">
+      <li class="social-icon" >
+        <a href="https://www.kageori.com/"><img src="{% static 'img/blogger.png' %}" alt="Blogger"></a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <p>©︎ 2020 Kageori Kiyoshige</p>
+  </div>
+</footer>
+</html>
